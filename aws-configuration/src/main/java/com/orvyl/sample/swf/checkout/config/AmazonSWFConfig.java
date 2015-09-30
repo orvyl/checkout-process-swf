@@ -37,8 +37,7 @@ public class AmazonSWFConfig {
     @Bean
     public AmazonSimpleWorkflow amazonSimpleWorkflow() {
         AmazonSimpleWorkflow workflow = new AmazonSimpleWorkflowClient(awsCredentials(), clientConfiguration());
-        // TODO add region
-        workflow.setRegion(Region.getRegion(Regions.fromName("")));
+        workflow.setRegion(Region.getRegion(Regions.fromName(amazonSWFProperties.getRegionId())));
 
         return workflow;
     }
