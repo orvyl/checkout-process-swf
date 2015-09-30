@@ -1,4 +1,4 @@
-package com.orvyl.sample.swf.checkout.config;
+package com.orvyl.sample.swf.checkout.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
