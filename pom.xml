@@ -20,6 +20,7 @@
         <module>decider</module>
         <module>api</module>
         <module>aws-configuration</module>
+        <module>checkout-page-starter</module>
     </modules>
 
     <properties>

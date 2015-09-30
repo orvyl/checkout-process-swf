@@ -1,8 +1,9 @@
-Simple Checkout Process
+AWS SWF - Simple Checkout Process Service
 =========
-**Simple Checkout Process** is a sample service implementing Amazon SWF in Spring Boot.
+A sample service implementing Amazon SWF in Spring Boot.
 
 
 links:
+
 http://docs.aws.amazon.com/AWSSdkDocsJava/latest/DeveloperGuide/credentials.html
 http://docs.aws.amazon.com/general/latest/gr/rande.html
