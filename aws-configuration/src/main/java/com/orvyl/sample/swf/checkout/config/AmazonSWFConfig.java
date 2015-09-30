@@ -1,8 +1,8 @@
 package com.orvyl.sample.swf.checkout.config;
 
 import com.amazonaws.ClientConfiguration;
-import com.amazonaws.auth.AWSCredentialsProvider;
-import com.amazonaws.auth.profile.ProfileCredentialsProvider;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow;
@@ -25,14 +25,14 @@ public class AmazonSWFConfig {
     }
 
     @Bean
-    public AWSCredentialsProvider awsCredentialsProvider() {
-        // TODO add aws-credntial directory
-        return new ProfileCredentialsProvider("");
+    public AWSCredentials awsCredentials() {
+        // TODO add keys
+        return new BasicAWSCredentials("access_key_id", "secret_access_key");
     }
 
     @Bean
     public AmazonSimpleWorkflow amazonSimpleWorkflow() {
-        AmazonSimpleWorkflow workflow = new AmazonSimpleWorkflowClient(awsCredentialsProvider(), clientConfiguration());
+        AmazonSimpleWorkflow workflow = new AmazonSimpleWorkflowClient(awsCredentials(), clientConfiguration());
         // TODO add region
         workflow.setRegion(Region.getRegion(Regions.fromName("")));
 
