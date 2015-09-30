@@ -13,6 +13,7 @@
         <module>activities-api</module>
         <module>decider</module>
         <module>api</module>
+        <module>aws-configuration</module>
     </modules>
 
 
