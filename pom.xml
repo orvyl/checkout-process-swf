@@ -4,6 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.2.2.RELEASE</version>
+    </parent>
+
     <groupId>com.orvyl.sample</groupId>
     <artifactId>checkout-process-swf</artifactId>
     <packaging>pom</packaging>
@@ -15,6 +21,10 @@
         <module>api</module>
         <module>aws-configuration</module>
     </modules>
+
+    <properties>
+        <aws-java-sdk.version>1.9.35</aws-java-sdk.version>
+    </properties>
 
 
 </project>
