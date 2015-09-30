@@ -7,6 +7,8 @@ import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow;
 import com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflowClient;
+import com.orvyl.sample.swf.checkout.properties.AmazonSWFProperties;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -15,6 +17,9 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class AmazonSWFConfig {
+
+    @Autowired
+    private AmazonSWFProperties amazonSWFProperties;
 
     @Bean
     public ClientConfiguration clientConfiguration() {
@@ -26,8 +31,7 @@ public class AmazonSWFConfig {
 
     @Bean
     public AWSCredentials awsCredentials() {
-        // TODO add keys
-        return new BasicAWSCredentials("access_key_id", "secret_access_key");
+        return new BasicAWSCredentials(amazonSWFProperties.getAccessKeyId(), amazonSWFProperties.getSecretAccessKey());
     }
 
     @Bean

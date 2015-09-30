@@ -8,7 +8,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "aws.swf")
 public class AmazonSWFProperties {
     private String regionId;
-    private String configFile;
+    private String accessKeyId;
+    private String secretAccessKey;
     private String domain;
 
     public String getRegionId() {
@@ -19,12 +20,20 @@ public class AmazonSWFProperties {
         this.regionId = regionId;
     }
 
-    public String getConfigFile() {
-        return configFile;
+    public String getAccessKeyId() {
+        return accessKeyId;
     }
 
-    public void setConfigFile(String configFile) {
-        this.configFile = configFile;
+    public void setAccessKeyId(String accessKeyId) {
+        this.accessKeyId = accessKeyId;
+    }
+
+    public String getSecretAccessKey() {
+        return secretAccessKey;
+    }
+
+    public void setSecretAccessKey(String secretAccessKey) {
+        this.secretAccessKey = secretAccessKey;
     }
 
     public String getDomain() {

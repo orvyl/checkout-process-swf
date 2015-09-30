@@ -5,3 +5,4 @@ Simple Checkout Process
 
 links:
 http://docs.aws.amazon.com/AWSSdkDocsJava/latest/DeveloperGuide/credentials.html
+http://docs.aws.amazon.com/general/latest/gr/rande.html
