@@ -11,5 +11,89 @@
 
     <artifactId>decider</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.orvyl.sample</groupId>
+            <artifactId>api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.orvyl.sample</groupId>
+            <artifactId>activities-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.orvyl.sample</groupId>
+            <artifactId>aws-configuration</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-ws</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <!-- for aspectJ and stuffs for swf generated sources -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>aspectj-maven-plugin</artifactId>
+                <version>${aspectj.p.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjrt</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjtools</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <complianceLevel>1.8</complianceLevel>
+                    <showWeaveInfo>true</showWeaveInfo>
+                    <verbose>true</verbose>
+                    <Xlint>ignore</Xlint>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <aspectLibraries>
+                        <aspectLibrary>
+                            <groupId>com.amazonaws</groupId>
+                            <artifactId>aws-java-sdk-swf-libraries</artifactId>
+                        </aspectLibrary>
+                        <aspectLibrary>
+                            <groupId>com.amazonaws</groupId>
+                            <artifactId>aws-java-sdk</artifactId>
+                        </aspectLibrary>
+                    </aspectLibraries>
+                    <sources>
+                        <source>
+                            <basedir>${basedir}/target/generated-sources/annotations/</basedir>
+                        </source>
+                        <source>
+                            <basedir>${basedir}/src/main/java</basedir>
+                        </source>
+                    </sources>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>test-compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
