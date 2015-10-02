@@ -15,6 +15,6 @@ import com.orvyl.sample.swf.checkout.activities.api.domain.Order;
 public interface CheckoutWorkflow {
 
     @Execute(version = "1.0-SNAPSHOT")
-    void performCheckoutProcess(Order order);
+    void execute(Order order);
 
 }
