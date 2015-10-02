@@ -9,6 +9,7 @@ import com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow;
 import com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflowClient;
 import com.orvyl.sample.swf.checkout.properties.AmazonSWFProperties;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -16,6 +17,7 @@ import org.springframework.context.annotation.Configuration;
  * Created by vyl on 9/30/15.
  */
 @Configuration
+@EnableConfigurationProperties(AmazonSWFProperties.class)
 public class AmazonSWFConfig {
 
     @Autowired
