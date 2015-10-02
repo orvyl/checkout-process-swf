@@ -33,6 +33,8 @@
         <processor.p.version>2.2.3</processor.p.version>
         <compiler.p.version>2.1</compiler.p.version>
         <aspectj.p.version>1.7</aspectj.p.version>
+        <aspectj.version>1.8.1</aspectj.version>
+        <freemarker.version>2.3.9</freemarker.version>
     </properties>
 
     <dependencies>
