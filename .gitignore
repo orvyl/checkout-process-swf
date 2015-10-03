@@ -22,4 +22,3 @@ atlassian-ide-plugin.xml
 
 */*.iml
 */target
-*/config/*.properties
