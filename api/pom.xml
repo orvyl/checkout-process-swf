@@ -16,12 +16,12 @@
             <groupId>com.orvyl.sample</groupId>
             <artifactId>activities-api</artifactId>
             <version>1.0-SNAPSHOT</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.orvyl.sample</groupId>
             <artifactId>aws-configuration</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <scope>provided</scope>
         </dependency>
 
         <!--AWS-->
