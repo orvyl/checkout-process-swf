@@ -29,7 +29,7 @@ public class HomeController {
 
     @RequestMapping(value = "/checkout", method = RequestMethod.POST)
     public String checkout(Model model) {
-        String orderId = UUID.randomUUID().toString().substring(0,9);
+        String orderId = UUID.randomUUID().toString().substring(0,8);
 
         model.addAttribute("orderId", orderId);
 
