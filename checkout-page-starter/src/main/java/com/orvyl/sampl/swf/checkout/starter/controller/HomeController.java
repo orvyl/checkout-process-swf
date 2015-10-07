@@ -6,6 +6,7 @@ import com.orvyl.sample.swf.checkout.activities.api.domain.Order;
 import com.orvyl.sample.swf.checkout.workflow.api.CheckoutWorkflowAPI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -27,12 +28,16 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/checkout", method = RequestMethod.POST)
-    public String checkout() {
-        String orderId = UUID.randomUUID().toString();
+    public String checkout(Model model) {
+        String orderId = UUID.randomUUID().toString().substring(0,9);
+
+        model.addAttribute("orderId", orderId);
 
         Order order = new Order(orderId);
         order.setSubTotal(70.00);
-        order.setCustomer(new Customer("USER123", "Banung"));
+        Customer customer = new Customer("USER123", "Banung Salazar");
+        customer.setAddress("#588 HeneralLuna st. Makati City, Philippines");
+        order.setCustomer(customer);
         ArrayList<Item> items = new ArrayList<>();
 
         Item e = new Item();
