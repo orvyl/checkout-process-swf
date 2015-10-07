@@ -49,4 +49,14 @@ public class Order {
     public void setId(String id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id='" + id + '\'' +
+                ", items=" + items +
+                ", subTotal=" + subTotal +
+                ", customer=" + customer +
+                '}';
+    }
 }

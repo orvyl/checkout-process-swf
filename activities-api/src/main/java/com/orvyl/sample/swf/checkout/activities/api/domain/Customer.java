@@ -6,6 +6,7 @@ package com.orvyl.sample.swf.checkout.activities.api.domain;
 public class Customer {
     private String id;
     private String name;
+    private String address;
 
     public Customer(String id, String name) {
         this.id = id;
@@ -29,5 +30,22 @@ public class Customer {
 
     public String getName() {
         return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                '}';
     }
 }

@@ -49,4 +49,14 @@ public class Receipt {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "Receipt{" +
+                "referenceNo='" + referenceNo + '\'' +
+                ", date=" + date +
+                ", success=" + success +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }
