@@ -15,6 +15,13 @@ public class Receipt {
         this.referenceNo = referenceNo;
     }
 
+    public Receipt() {
+    }
+
+    public void setReferenceNo(String referenceNo) {
+        this.referenceNo = referenceNo;
+    }
+
     public String getReferenceNo() {
         return referenceNo;
     }

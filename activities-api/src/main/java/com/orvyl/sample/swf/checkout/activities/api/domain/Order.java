@@ -15,6 +15,9 @@ public class Order {
         this.id = id;
     }
 
+    public Order() {
+    }
+
     public String getId() {
         return id;
     }
@@ -41,5 +44,9 @@ public class Order {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
