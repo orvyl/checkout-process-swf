@@ -11,8 +11,8 @@ import com.orvyl.sample.swf.checkout.activities.api.domain.ShipOrderTxn;
  */
 @Activities(version = "1.0")
 @ActivityRegistrationOptions(
-        defaultTaskScheduleToStartTimeoutSeconds = 86400, // max of 1 day per activity
-        defaultTaskStartToCloseTimeoutSeconds = 30 // max of 30 seconds for every activity to finish task
+        defaultTaskScheduleToStartTimeoutSeconds = 86400, // task can wait 86400sec before processing
+        defaultTaskStartToCloseTimeoutSeconds = 30 // activity can process for 30sec
 )
 public interface CheckoutActivities {
     Order verifyOrder(Order order);
