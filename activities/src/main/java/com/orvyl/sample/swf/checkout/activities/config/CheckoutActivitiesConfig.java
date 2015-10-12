@@ -22,11 +22,11 @@ public class CheckoutActivitiesConfig {
     private AmazonSWFProperties amazonSWFProperties;
 
     @Autowired
-    private AmazonSimpleWorkflow swfClient;
+    private AmazonSimpleWorkflow amazonSimpleWorkflow;
 
     @Bean
     public ActivityWorker activityWorker() throws IllegalAccessException, NoSuchMethodException, InstantiationException {
-        ActivityWorker activityWorker = new ActivityWorker(swfClient, amazonSWFProperties.getDomain(), ACTIVITIES_TASK_LIST);
+        ActivityWorker activityWorker = new ActivityWorker(amazonSimpleWorkflow, amazonSWFProperties.getDomain(), ACTIVITIES_TASK_LIST);
         activityWorker.addActivitiesImplementation(new CheckoutActivitiesImpl());
 
         return activityWorker;
