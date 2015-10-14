@@ -6,6 +6,7 @@ import com.orvyl.sample.swf.checkout.activities.api.CheckoutActivitiesClientImpl
 import com.orvyl.sample.swf.checkout.activities.api.domain.Order;
 import com.orvyl.sample.swf.checkout.activities.api.domain.Receipt;
 import com.orvyl.sample.swf.checkout.activities.api.domain.ShipOrderTxn;
+import com.orvyl.sample.swf.checkout.activities.api.domain.VerifiedOrder;
 import com.orvyl.sample.swf.checkout.workflow.api.CheckoutWorkflow;
 
 /**
@@ -17,9 +18,9 @@ public class CheckoutDecider implements CheckoutWorkflow {
 
     @Override
     public void execute(Order order) {
-        Promise<Order> verifiedOrder = activitiesClient.verifyOrder(order);
+        Promise<VerifiedOrder> verifiedOrder = activitiesClient.verifyOrder(order);
         Promise<Receipt> receipt = activitiesClient.chargeCreditCard(verifiedOrder);
-        Promise<ShipOrderTxn> shipOrderTxn = activitiesClient.shipOrder(verifiedOrder);
+        Promise<ShipOrderTxn> shipOrderTxn = activitiesClient.shipOrder(verifiedOrder, receipt);
         activitiesClient.recordCompletion(verifiedOrder, receipt, shipOrderTxn);
     }
 }

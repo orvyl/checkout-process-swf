@@ -7,6 +7,7 @@ public class Item {
     private String name;
     private String description;
     private Double price;
+    private Integer quantity;
 
     public String getName() {
         return name;
@@ -32,12 +33,21 @@ public class Item {
         this.price = price;
     }
 
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
     @Override
     public String toString() {
         return "Item{" +
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", price=" + price +
+                ", quantity=" + quantity +
                 '}';
     }
 }

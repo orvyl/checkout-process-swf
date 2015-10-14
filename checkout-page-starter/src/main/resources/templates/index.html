@@ -5,33 +5,47 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-    <h2>Aling Puring Checkout Page</h2>
+    <h2>Zaloda Checkout Page</h2>
     <h4>**Items**</h4>
-    <table>
+    <table border="1" style="width:60%">
         <tr>
+            <td><b>Item(s)</b></td>
+            <td></td>
+            <td><b>Unit Price</b></td>
             <td><b>Quantity</b></td>
-            <td><b>Item</b></td>
-            <td><b>Price</b></td>
+            <td><b>Total Price</b></td>
         </tr>
         <tr>
-            <td>5</td>
             <td>Tinapang maliliit</td>
+            <td>
+                <img src="http://1.bp.blogspot.com/_w7ilNrFnHH4/TRoe_pUwlGI/AAAAAAAAPsI/VGG3B7bD4QI/s1600/galunggong+-smoked.jpg" width="150" height="100" />
+            </td>
+            <td>10.00</td>
+            <td>5</td>
             <td>50.00</td>
         </tr>
         <tr>
-            <td>1</td>
             <td>Bagoong</td>
+            <td>
+                <img src="http://files.recipetips.com/images/glossary/s/sauce_salted_fish.jpg" width="150" height="100" />
+            </td>
+            <td>15.00</td>
+            <td>1</td>
             <td>15.00</td>
         </tr>
         <tr>
-            <td>2</td>
             <td>Kamatis</td>
+            <td>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Bright_red_tomato_and_cross_section02.jpg/300px-Bright_red_tomato_and_cross_section02.jpg" width="150" height="100" />
+            </td>
+            <td>2.50</td>
+            <td>2</td>
             <td>5.00</td>
         </tr>
     </table>
     <p>Total price: P 70.00</p>
     <p>Customer: Banung Salazar</p>
-    <p>Address: #588 HeneralLuna st. Makati City, Philippines</p>
+    <p>Shipping Address: #588 Heneral Luna St. Makati City, Philippines 1211</p>
     <form method="post" action="http://localhost:8082/checkout">
         <input type="submit" value="CHECKOUT" />
     </form>

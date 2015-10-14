@@ -44,18 +44,21 @@ public class HomeController {
         e.setName("Tinapang maliliit");
         e.setDescription("Small dried fish");
         e.setPrice(50.00);
+        e.setQuantity(5);
         items.add(e);
 
         Item e1 = new Item();
         e1.setName("Bagoong");
         e1.setDescription("Bagoong from Cagayan");
         e1.setPrice(15.00);
+        e1.setQuantity(1);
         items.add(e1);
 
         Item e2 = new Item();
         e2.setName("Kamatis");
         e2.setDescription("Tomato");
         e2.setPrice(5.00);
+        e2.setQuantity(2);
         items.add(e2);
 
         order.setItems(items);
